@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 const PresidencyEvent = ({ isActive, isMobile }) => {
   const yearRef = useRef(null);

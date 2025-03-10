@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 const CoupEvent = ({ isActive, isMobile, contentRef }) => {
   const yearRef = useRef(null);
@@ -116,7 +116,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             position: 'relative'
           }}>
             <motion.img 
-              src="/images/bombardeo-plaza-mayo.jpg" 
+              src="/bombardeo.webp" 
               alt="Bombardeo a Plaza de Mayo" 
               style={{ 
                 maxWidth: '100%', 
@@ -133,8 +133,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             />
             <p className={styles.garamondQuote} style={{ 
               position: 'absolute', 
-              bottom: '-1.5rem', 
-              right: '0', 
+              bottom: '0', 
               background: 'rgba(0,0,0,0.7)', 
               color: 'white', 
               padding: '0.3rem 0.6rem', 

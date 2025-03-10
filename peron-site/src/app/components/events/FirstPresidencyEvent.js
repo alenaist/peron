@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // First Presidency event with custom structure and animations
 const FirstPresidencyEvent = ({ isActive, isMobile }) => {
@@ -169,7 +169,7 @@ const FirstPresidencyEvent = ({ isActive, isMobile }) => {
               animate={{ scale: isActive ? 1 : 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              1946
+              4 de junio de 1946
             </motion.div>
         
         {/* Title */}
@@ -234,7 +234,7 @@ const FirstPresidencyEvent = ({ isActive, isMobile }) => {
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)'
           }}>
             <img 
-              src="https://www.thoughtco.com/thmb/Wk38ArPp8RBPR9n6K28M-GgM6FA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-515447052-dcd735e5f5a84a9c9a2c10ff346c2dbc.jpg" 
+              src="asuncion1.jpg" 
               alt="Juan Domingo Perón durante su primera presidencia" 
               style={{
                 width: '100%',
@@ -271,7 +271,8 @@ const FirstPresidencyEvent = ({ isActive, isMobile }) => {
           <div style={{
             display: 'flex',
             borderBottom: '2px solid #1e3a8a',
-            marginBottom: '1.5rem'
+            marginBottom: '1.5rem',
+            overflow: 'hidden'
           }}>
             {tabContent.map((tab, index) => (
               <motion.button

@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Death event with custom structure and animations
 const DeathEvent = ({ isActive, isMobile }) => {
@@ -71,30 +71,12 @@ const DeathEvent = ({ isActive, isMobile }) => {
           animate={{ opacity: isActive ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Black ribbon */}
-          <div style={{
-            width: '40px',
-            height: '120px',
-            backgroundColor: 'black',
-            position: 'absolute',
-            top: '-20px',
-            left: 'calc(50% - 20px)',
-            zIndex: 0,
-            transform: 'rotate(45deg)',
-            transformOrigin: 'top center',
-            opacity: 0.8
-          }} />
-          
+       
           {/* Year badge with typing animation */}
           <motion.div 
             className={styles.yearBadge}
             style={{ 
-              backgroundColor: '#000',
-              color: '#fff',
-              border: '2px solid #333',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-              marginBottom: '1.5rem',
-              zIndex: 1
+       
             }}
             initial={{ scale: 0, rotate: -10 }}
             animate={{ 
@@ -176,7 +158,7 @@ const DeathEvent = ({ isActive, isMobile }) => {
             border: '8px solid white'
           }}>
             <img 
-              src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/V3SVQTZRZJHQFBDQHBRMXVTKQQ.jpg" 
+              src="fallecimiento01.jpg" 
               alt="Funeral de Juan Domingo Perón" 
               style={{
                 width: '100%',

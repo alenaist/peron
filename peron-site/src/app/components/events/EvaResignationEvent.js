@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 const EvaResignationEvent = ({ isActive, isMobile, contentRef }) => {
   const yearRef = useRef(null);
@@ -113,16 +113,18 @@ const EvaResignationEvent = ({ isActive, isMobile, contentRef }) => {
             display: 'flex', 
             justifyContent: 'center', 
             margin: '1.5rem 0',
-            position: 'relative'
+            position: 'relative',
+            height: '310px'
           }}>
             <motion.img 
-              src="/images/eva-renuncia.jpg" 
+              src="/evaRenuncia.png" 
               alt="Eva Perón durante el Cabildo Abierto" 
               style={{ 
-                maxWidth: '100%', 
+                width: '100%', 
                 height: 'auto', 
                 borderRadius: '4px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                objectFit: 'cover'
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ 
@@ -133,8 +135,7 @@ const EvaResignationEvent = ({ isActive, isMobile, contentRef }) => {
             />
             <p className={styles.garamondQuote} style={{ 
               position: 'absolute', 
-              bottom: '-1.5rem', 
-              right: '0', 
+              bottom: '0', 
               background: 'rgba(0,0,0,0.7)', 
               color: 'white', 
               padding: '0.3rem 0.6rem', 

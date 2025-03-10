@@ -3,11 +3,14 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
+import { gsap } from 'gsap';
 
 // Birth event with completely custom structure
 const BirthEvent = ({ isActive, isMobile, contentRef }) => {
   const yearRef = useRef(null);
+  const baby01Ref = useRef(null);
+  const baby02Ref = useRef(null);
   
   useEffect(() => {
     if (isActive && yearRef.current) {
@@ -40,6 +43,52 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
       contentRef.current.scrollTop = 0;
     }
   }, [isActive, contentRef]);
+
+  useEffect(() => {
+    if (isActive && baby02Ref.current) {
+      // Create the head movement animation with more natural movement
+      const animation = gsap.timeline({
+        repeat: -1, // Infinite repeat
+        repeatDelay: 2, // Longer pause between animations for more natural feel
+        paused: true
+      });
+      
+      // First movement to the right
+      animation.to(baby02Ref.current, {
+        rotation: 2, // More subtle rotation
+        x: 2, // More subtle movement
+        duration: 3, // Slower movement
+        ease: "power1.inOut", // Smoother easing
+        transformOrigin: "bottom center"
+      });
+      
+      // Then back to center and slightly to the left
+      animation.to(baby02Ref.current, {
+        rotation: -1.5, // More subtle rotation
+        x: -1.5, // More subtle movement
+        duration: 2.5,
+        ease: "power1.inOut",
+        transformOrigin: "bottom center"
+      });
+      
+      // Then back to the starting position
+      animation.to(baby02Ref.current, {
+        rotation: 0, 
+        x: 0, 
+        duration: 2,
+        ease: "power1.inOut",
+        transformOrigin: "bottom center"
+      });
+      
+      // Play the animation when component is active
+      animation.play();
+      
+      // Clean up animation on unmount or when inactive
+      return () => {
+        animation.kill();
+      };
+    }
+  }, [isActive]);
 
   return (
     <motion.section 
@@ -100,7 +149,7 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
         </motion.h2>
         
         {/* Custom layout for birth event */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
+        <div className={styles.eventContent_birth} style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
           {/* First content block */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -110,31 +159,35 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
             }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <h3 style={{ 
-              fontSize: '1.4rem', 
-              color: '#e11d48', 
-              marginBottom: '0.5rem',
-              fontWeight: 600,
-              fontFamily: 'EB Garamond, serif'
-            }}>
-              Los Primeros Días
-            </h3>
-            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, fontFamily: 'EB Garamond, serif' }}>
-              Juan Domingo Perón nace el 8 de octubre de 1895 en Lobos, provincia de Buenos Aires, Argentina. 
-              Hijo de Mario Tomás Perón y Juana Sosa Toledo, su familia tenía ascendencia española, 
-              italiana y británica.
-            </p>
+
+            <div style={{'marginLeft': '110px'}}>
+              <h3 style={{ 
+                fontSize: '1.4rem', 
+                color: '#e11d48', 
+                marginBottom: '0.5rem',
+                fontWeight: 600,
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Los Primeros Días
+              </h3>
+              <p style={{ fontSize: '1.1rem', lineHeight: 1.6, fontFamily: 'EB Garamond, serif' }}>
+                Juan Domingo Perón nace el 8 de octubre de 1895 en Lobos, provincia de Buenos Aires, Argentina. 
+                Hijo de Mario Tomás Perón y Juana Sosa Toledo, su familia tenía ascendencia española, 
+                italiana y británica.
+              </p>
+            </div>
+     
           </motion.div>
           
           {/* Image with caption */}
           <motion.div
             style={{ 
+              position: 'relative',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
               backgroundColor: 'rgba(225, 29, 72, 0.05)',
               padding: '1rem',
-              borderRadius: '8px'
+              borderRadius: '8px',
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ 
@@ -143,24 +196,29 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
             }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Juan_Domingo_Per%C3%B3n.jpg/220px-Juan_Domingo_Per%C3%B3n.jpg" 
-              alt="Juan Domingo Perón en su juventud" 
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
-              }}
-            />
+
+            <div style={{ position: 'absolute', top: -229, left: -30 }}>
+              <img 
+                className={styles.baby01} 
+                src="/nacimiento/baby01.png" 
+                alt="Juan Domingo Perón en su infancia" 
+              />
+              <img 
+                ref={baby02Ref}
+                className={styles.baby02} 
+                src="/nacimiento/baby02.png" 
+                alt="Juan Domingo Perón en su infancia" 
+              />
+            </div>
+
             <p style={{ 
               fontStyle: 'italic', 
-              marginTop: '0.75rem',
-              textAlign: 'center',
-              fontSize: '0.9rem',
-              fontFamily: 'EB Garamond, serif'
+              fontSize: '1.2rem',
+              width: '60%',
+              fontFamily: 'EB Garamond, serif',
+              marginLeft: '140px'
             }}>
-              Juan Domingo Perón en su juventud
+              Aunque aún gateo, ya sueño con el día en que los trabajadores caminarán erguidos. Mis primeras palabras no serán 'mamá' o 'papá', sino 'justicia social'. -Bebe Perón (?)
             </p>
           </motion.div>
           

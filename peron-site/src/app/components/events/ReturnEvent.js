@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 const ReturnEvent = ({ isActive, isMobile }) => {
   const yearRef = useRef(null);
@@ -114,16 +114,16 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             display: 'flex', 
             justifyContent: 'center', 
             margin: '1.5rem 0',
-            position: 'relative'
+            position: 'relative',
+            height: '300px'
           }}>
             <motion.img 
-              src="/images/peron-regreso.jpg" 
+              src="/regreso.jpg" 
               alt="Regreso de Juan Domingo Perón a Argentina" 
               style={{ 
-                maxWidth: '100%', 
-                height: 'auto', 
-                borderRadius: '4px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                width: '100%', 
+                height: 'auto',
+                objectFit: 'cover'
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ 
@@ -134,9 +134,8 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             />
             <p className={styles.garamondQuote} style={{ 
               position: 'absolute', 
-              bottom: '-1.5rem', 
-              right: '0', 
-              background: 'rgba(0,0,0,0.7)', 
+              bottom: '0', 
+              background: 'rgba(0,0,0,1)', 
               color: 'white', 
               padding: '0.3rem 0.6rem', 
               borderRadius: '2px',

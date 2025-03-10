@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Eva Meeting event with custom structure and animations
 const EvaMeetingEvent = ({ isActive, isMobile }) => {
@@ -113,18 +113,24 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '500px',
+            maxHeight: '240px',
             borderRadius: '8px',
             overflow: 'hidden',
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)'
+
+
+
+
           }}>
             <img 
-              src="https://www.thoughtco.com/thmb/XLEIr9ju1EvxSMTTdBvyTLMFZHk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-517357222-0e06f7946c8e465997e97c525b30dd1a.jpg" 
+              src="/peronYeva.jpg" 
               alt="Juan Domingo Perón y Eva Duarte" 
               style={{
                 width: '100%',
                 height: 'auto',
-                display: 'block'
+                display: 'block',
+                top: '-100px',
+                position: 'relative'
               }}
             />
           </div>
@@ -179,10 +185,7 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
           <motion.div
             style={{
               backgroundColor: 'white',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(225, 29, 72, 0.1)'
+              padding: '1.5rem'
             }}
             initial={{ opacity: 0, x: -20 }}
             animate={{ 
@@ -211,10 +214,7 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
           <motion.div
             style={{
               backgroundColor: 'white',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(225, 29, 72, 0.1)'
+              padding: '1.5rem'
             }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ 

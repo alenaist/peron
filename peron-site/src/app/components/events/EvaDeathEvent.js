@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Eva Death event with completely custom structure and animations
 const EvaDeathEvent = ({ isActive, isMobile }) => {
@@ -29,7 +29,7 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
         {/* Year badge with custom animation */}
         <motion.div 
           className={styles.yearBadge}
-          style={{ backgroundColor: '#000', color: '#fff' }}
+          style={{ }}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ 
             scale: isActive ? 1 : 0, 
@@ -40,7 +40,7 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
             delay: 0.2
           }}
         >
-          1952
+          26 de julio de 1952
         </motion.div>
         
         {/* Title with custom animation */}
@@ -70,21 +70,6 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
           >
             El Fallecimiento de Eva Perón
           </motion.h2>
-          
-          <motion.p
-            style={{
-              fontSize: '1.2rem',
-              fontStyle: 'italic',
-              textAlign: 'center',
-              margin: '1rem 0',
-              color: '#666'
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isActive ? 1 : 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            26 de julio de 1952
-          </motion.p>
         </motion.div>
         
         {/* Memorial image with black ribbon */}
@@ -94,7 +79,8 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
+        
           }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ 
@@ -103,26 +89,32 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
           }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          {/* Black ribbon */}
-          <div
+
+          <motion.p
             style={{
+              fontSize: '1.2rem',
+              fontStyle: 'italic',
+              textAlign: 'center',
               position: 'absolute',
-              top: '-10px',
-              right: '30%',
-              width: '40px',
-              height: '80px',
+              top: '-5px',
+              color: '#fff',
               backgroundColor: '#000',
-              zIndex: 2,
-              transform: 'rotate(45deg)'
+              padding: '0 20px'
             }}
-          />
+            initial={{ opacity: 0, y: -10}}
+            animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : -10}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            26 de julio de 1952
+          </motion.p>
+      
           
           <img 
-            src="https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NjAzNTI5MDg3MzM5/eva-peron-funeral.jpg" 
+            src="funeralEva.jpg" 
             alt="Funeral de Eva Perón" 
             style={{
               width: '100%',
-              maxWidth: '350px',
+              maxWidth: '500px',
               borderRadius: '8px',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
               border: '8px solid white'

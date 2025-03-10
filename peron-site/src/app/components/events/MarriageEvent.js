@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Marriage event with custom structure and animations
 const MarriageEvent = ({ isActive, isMobile }) => {
@@ -123,7 +123,7 @@ const MarriageEvent = ({ isActive, isMobile }) => {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <img 
-                src="/images/peron-eva-wedding.jpg" 
+                src="/casamiento.png" 
                 alt="Boda de Juan Domingo Perón y Eva Duarte" 
                 style={{ 
                   width: '100%', 
@@ -131,20 +131,6 @@ const MarriageEvent = ({ isActive, isMobile }) => {
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
                 }}
               />
-              <p className={styles.garamondQuote} style={{ 
-                position: 'absolute', 
-                bottom: '-1.5rem', 
-                right: '0', 
-                background: 'rgba(0,0,0,0.7)', 
-                color: 'white', 
-                padding: '0.3rem 0.6rem', 
-                borderRadius: '2px',
-                fontSize: '0.8rem',
-                fontStyle: 'italic',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                Perón y Eva el día de su boda civil
-              </p>
             </motion.div>
             
             <div style={{ flex: 1 }}>

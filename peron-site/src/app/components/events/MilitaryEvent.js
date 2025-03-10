@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Military event with custom structure and animations
 const MilitaryEvent = ({ isActive, isMobile }) => {
@@ -94,6 +94,9 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
           Carrera Militar
         </motion.h2>
         
+
+
+        
         {/* Content with animation */}
         <motion.div
           className={styles.eventDescription}
@@ -104,49 +107,42 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
           }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
-            En 1911, a los 16 años, Juan Domingo Perón ingresó al Colegio Militar de la Nación, 
-            iniciando una carrera que marcaría profundamente su visión política y social. Se graduó en 1913 
-            como subteniente de infantería.
-          </p>
           
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            margin: '1.5rem 0',
-            position: 'relative'
-          }}>
-            <motion.img 
-              src="/images/peron-militar.jpg" 
-              alt="Juan Domingo Perón en uniforme militar" 
-              style={{ 
-                maxWidth: '100%', 
-                height: 'auto', 
-                borderRadius: '4px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ 
-                opacity: isActive ? 1 : 0, 
-                scale: isActive ? 1 : 0.9 
-              }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            />
-            <p className={styles.garamondQuote} style={{ 
-              position: 'absolute', 
-              bottom: '-1.5rem', 
-              right: '0', 
-              background: 'rgba(0,0,0,0.7)', 
-              color: 'white', 
-              padding: '0.3rem 0.6rem', 
-              borderRadius: '2px',
-              fontSize: '0.8rem',
-              fontStyle: 'italic',
-              fontFamily: 'EB Garamond, serif'
-            }}>
-              Perón en uniforme militar, circa 1920
+
+          <div style={{ display: 'flex', alignItems: 'center'}}>
+
+          <motion.img 
+            src="/militar01.jpg" 
+            alt="Juan Domingo Perón en uniforme militar" 
+            style={{ 
+              maxWidth: '200px', 
+              height: 'auto', 
+              borderRadius: '4px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ 
+              opacity: isActive ? 1 : 0, 
+              scale: isActive ? 1 : 0.9 
+                }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              />
+
+            <p 
+            className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' , marginLeft: '40px',
+    fontSize: '22px',
+    lineHeight: '33px'
+}}>
+              En 1911, a los 16 años, Juan Domingo Perón ingresó al Colegio Militar de la Nación, 
+              iniciando una carrera que marcaría profundamente su visión política y social. Se graduó en 1913 
+              como subteniente de infantería.
             </p>
+            
+           
+       
+           
           </div>
+
           
           <h3 style={{ 
             fontSize: '1.4rem', 

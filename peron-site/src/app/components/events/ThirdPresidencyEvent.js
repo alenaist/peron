@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 const ThirdPresidencyEvent = ({ isActive, isMobile }) => {
   const yearRef = useRef(null);
@@ -114,16 +114,20 @@ const ThirdPresidencyEvent = ({ isActive, isMobile }) => {
             display: 'flex', 
             justifyContent: 'center', 
             margin: '1.5rem 0',
-            position: 'relative'
+            position: 'relative',
+            height: '300px'
           }}>
             <motion.img 
-              src="/images/peron-tercera-presidencia.jpg" 
+              className={styles.thirdPresidencyImage}
+              src="/tercera.jpg" 
               alt="Juan Domingo Perón en su tercera presidencia" 
               style={{ 
-                maxWidth: '100%', 
+                width: '100%', 
                 height: 'auto', 
                 borderRadius: '4px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                objectFit: 'cover',
+                objectPosition: '0 -95px'
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ 
@@ -134,9 +138,8 @@ const ThirdPresidencyEvent = ({ isActive, isMobile }) => {
             />
             <p className={styles.garamondQuote} style={{ 
               position: 'absolute', 
-              bottom: '-1.5rem', 
-              right: '0', 
-              background: 'rgba(0,0,0,0.7)', 
+              bottom: '0',  
+              background: 'rgba(0,0,0,1)', 
               color: 'white', 
               padding: '0.3rem 0.6rem', 
               borderRadius: '2px',

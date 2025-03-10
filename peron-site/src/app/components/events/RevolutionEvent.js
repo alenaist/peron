@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Revolution event with custom structure and animations
 const RevolutionEvent = ({ isActive, isMobile }) => {
@@ -77,7 +77,30 @@ const RevolutionEvent = ({ isActive, isMobile }) => {
           </div>
         </motion.div>
         
-        {/* Title with animation */}
+   
+        
+        {/* Main content with image */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: '2rem',
+          marginBottom: '2rem',
+          alignItems: 'center'
+        }}>
+
+
+          {/* Left column - Content */}
+          <motion.div
+            style={{ flex: '1' }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ 
+              opacity: isActive ? 1 : 0, 
+              x: isActive ? 0 : -20 
+            }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+
+                 {/* Title with animation */}
         <motion.h2 
           className={`${styles.eventTitle} ${styles.garamondTitle}`}
           initial={{ opacity: 0, x: -50 }}
@@ -94,24 +117,8 @@ const RevolutionEvent = ({ isActive, isMobile }) => {
         >
           La Revolución de Junio
         </motion.h2>
-        
-        {/* Main content with image */}
-        <div style={{ 
-          display: 'flex', 
-          flexDirection: isMobile ? 'column' : 'row',
-          gap: '2rem',
-          marginBottom: '2rem'
-        }}>
-          {/* Left column - Content */}
-          <motion.div
-            style={{ flex: '1' }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ 
-              opacity: isActive ? 1 : 0, 
-              x: isActive ? 0 : -20 
-            }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
+
+
             <p style={{ fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '1rem', fontFamily: 'EB Garamond, serif' }}>
               El 4 de junio de 1943, un grupo de oficiales del Ejército Argentino, entre los que se encontraba 
               Juan Domingo Perón, llevó a cabo un golpe de estado que derrocó al gobierno del presidente Ramón Castillo.
@@ -138,11 +145,11 @@ const RevolutionEvent = ({ isActive, isMobile }) => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <img 
-              src="https://commons.wikimedia.org/wiki/File:Edelmiro_Farrell_and_Juan_Domingo_Per%C3%B3n.jpg#/media/File:Edelmiro_Farrell_and_Juan_Domingo_Per%C3%B3n.jpg" 
+              src="/golpe1943.jpg" 
               alt="Edelmiro Farrell y Juan Domingo Perón" 
               style={{
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '330px',
                 borderRadius: '8px',
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
               }}

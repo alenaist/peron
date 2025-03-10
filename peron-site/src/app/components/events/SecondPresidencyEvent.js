@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Second Presidency event with custom structure and animations
 const SecondPresidencyEvent = ({ isActive, isMobile }) => {
@@ -30,9 +30,7 @@ const SecondPresidencyEvent = ({ isActive, isMobile }) => {
         <motion.div 
           className={styles.yearBadge}
           style={{ 
-            backgroundColor: '#1e3a8a',
-            border: '2px solid #1e40af',
-            boxShadow: '0 4px 8px rgba(30, 58, 138, 0.3)'
+            
           }}
           initial={{ opacity: 0, x: -30 }}
           animate={{ 
@@ -46,16 +44,10 @@ const SecondPresidencyEvent = ({ isActive, isMobile }) => {
             stiffness: 150
           }}
         >
-          <div>
-            1952
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: 'normal',
-              marginTop: '0.1rem'
-            }}>
-              4 de junio
-            </span>
+            <div>
+            <p style={{ }}>
+              4 de junio de 1952
+            </p>
           </div>
         </motion.div>
         
@@ -101,7 +93,7 @@ const SecondPresidencyEvent = ({ isActive, isMobile }) => {
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)'
           }}>
             <img 
-              src="https://static01.nyt.com/images/2016/08/28/books/review/28KAISER/28KAISER-jumbo.jpg" 
+              src="juraMandato2.webp" 
               alt="Juan Domingo Perón durante su segunda presidencia" 
               style={{
                 width: '100%',
@@ -161,10 +153,7 @@ const SecondPresidencyEvent = ({ isActive, isMobile }) => {
           <motion.div
             style={{
               backgroundColor: 'white',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(30, 58, 138, 0.1)'
+              padding: '1.5rem'
             }}
             initial={{ opacity: 0, x: -20 }}
             animate={{ 
@@ -194,9 +183,7 @@ const SecondPresidencyEvent = ({ isActive, isMobile }) => {
             style={{
               backgroundColor: 'white',
               padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(30, 58, 138, 0.1)'
+              borderRadius: '8px'
             }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ 

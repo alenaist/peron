@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Isabel Marriage event with custom structure and animations
 const IsabelMarriageEvent = ({ isActive, isMobile }) => {
@@ -30,9 +30,6 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
         <motion.div 
           className={styles.yearBadge}
           style={{ 
-            backgroundColor: '#e11d48',
-            border: '2px solid #be123c',
-            boxShadow: '0 4px 8px rgba(225, 29, 72, 0.3)'
           }}
           initial={{ opacity: 0, x: -30 }}
           animate={{ 
@@ -47,15 +44,11 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
           }}
         >
           <div>
-            1961
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: 'normal',
-              marginTop: '0.1rem'
+         
+            <p style={{ 
             }}>
-              15 de noviembre
-            </span>
+              15 de noviembre de 1961
+            </p>
           </div>
         </motion.div>
         
@@ -83,7 +76,7 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: '2rem',
+            marginBottom: '1rem',
             position: 'relative'
           }}
           initial={{ opacity: 0 }}
@@ -101,7 +94,6 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             <h2 style={{ 
               fontSize: '2rem',
               color: '#e11d48',
-              margin: '0 0 0.5rem',
               fontFamily: 'serif',
               fontWeight: 'normal'
             }}>
@@ -143,24 +135,31 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             border: '10px solid white'
           }}>
             <img 
-              src="https://commons.wikimedia.org/wiki/File:Peron-Isabel_1.jpg#/media/File:Peron-Isabel_1.jpg" 
+              src="isabelPeron01.jpg" 
               alt="Juan Domingo Perón e Isabel Martínez" 
               style={{
                 width: '100%',
-                height: 'auto',
-                display: 'block'
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+                rotate: '2deg'
               }}
             />
           </div>
-        </motion.div>
-        
-        {/* Context section */}
+
+
+             {/* Context section */}
         <motion.div
           style={{
             backgroundColor: 'rgba(225, 29, 72, 0.05)',
-            padding: '1.5rem',
-            borderRadius: '8px',
-            marginBottom: '2rem'
+            padding: '2rem',
+            margin: '20px 0',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            borderTopRightRadius: '8px',
+            borderBottomRightRadius: '8px'
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ 
@@ -173,6 +172,7 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             fontSize: '1.3rem', 
             color: '#e11d48',
             marginBottom: '1rem',
+            width: '100%',
             borderBottom: '1px solid rgba(225, 29, 72, 0.2)',
             paddingBottom: '0.5rem'
           }}>
@@ -191,6 +191,11 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             encuentro, se convirtió en su secretaria personal y, posteriormente, en su tercera esposa.
           </p>
         </motion.div>
+
+        
+        </motion.div>
+        
+     
         
         {/* Two columns section */}
         <div style={{ 
@@ -204,9 +209,6 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             style={{
               backgroundColor: 'white',
               padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(225, 29, 72, 0.1)'
             }}
             initial={{ opacity: 0, x: -20 }}
             animate={{ 
@@ -236,10 +238,7 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
           <motion.div
             style={{
               backgroundColor: 'white',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid rgba(225, 29, 72, 0.1)'
+              padding: '1.5rem'
             }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ 

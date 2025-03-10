@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import SplitType from 'split-type';
-import styles from './ScrollingBiography.module.css';
+import styles from './ScrollingBiography.module.scss';
 
 // Import individual event components
 import BirthEvent from './events/BirthEvent';
@@ -648,31 +648,6 @@ const ScrollingBiography = () => {
         </div>
       </motion.div>
     );
-  };
-  
-  // Helper function to get image URL for an event
-  const getEventImageUrl = (eventId) => {
-    // Map of event IDs to image URLs from the peronLifeEvents array
-    const eventImageMap = {
-      'birth': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Juan_Domingo_Per%C3%B3n.jpg/220px-Juan_Domingo_Per%C3%B3n.jpg',
-      'military': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Juan_Domingo_Per%C3%B3n.jpg/220px-Juan_Domingo_Per%C3%B3n.jpg',
-      'revolution': 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Edelmiro_Farrell_and_Juan_Domingo_Per%C3%B3n.jpg',
-      'eva-meeting': 'https://www.thoughtco.com/thmb/XLEIr9ju1EvxSMTTdBvyTLMFZHk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-517357222-0e06f7946c8e465997e97c525b30dd1a.jpg',
-      'loyalty-day': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/17_de_octubre_de_1945.jpg/800px-17_de_octubre_de_1945.jpg',
-      'marriage': 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Evita_y_Juan_Domingo_Per%C3%B3n.jpg',
-      'first-presidency': 'https://www.thoughtco.com/thmb/Wk38ArPp8RBPR9n6K28M-GgM6FA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-515447052-dcd735e5f5a84a9c9a2c10ff346c2dbc.jpg',
-      'womens-vote': 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UDEFC2SXUZBLXC6WGXCUUEVYCY.jpg',
-      'eva-resignation': 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UDEFC2SXUZBLXC6WGXCUUEVYCY.jpg',
-      'eva-death': 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NjAzNTI5MDg3MzM5/eva-peron-funeral.jpg',
-      'second-presidency': 'https://static01.nyt.com/images/2016/08/28/books/review/28KAISER/28KAISER-jumbo.jpg',
-      'coup': 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Bombardeo_de_la_Plaza_de_Mayo.jpg',
-      'isabel-marriage': 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Peron-Isabel_1.jpg',
-      'return': 'https://www.aljazeera.com/wp-content/uploads/2023/06/2023-06-19T151913Z_1298289241_RC24B0AWVR0M_RTRMADP_3_ARGENTINA-PERON-ANNIVERSARY.jpg',
-      'third-presidency': 'https://www.thoughtco.com/thmb/L4rBnYWjd83QeY3Yp6Zt6BoNFRA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/124864_c64-56a97d5c3df78cf772a85cfe.jpg',
-      'death': 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/V3SVQTZRZJHQFBDQHBRMXVTKQQ.jpg'
-    };
-    
-    return eventImageMap[eventId];
   };
   
   return (

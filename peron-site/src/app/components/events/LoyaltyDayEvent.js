@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Loyalty Day event with custom structure and animations
 const LoyaltyDayEvent = ({ isActive, isMobile }) => {
@@ -59,33 +59,14 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
           {/* Background image */}
           <div
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundImage: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/17_de_octubre_de_1945.jpg/800px-17_de_octubre_de_1945.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'brightness(0.7)'
+              backgroundColor: 'black',
             }}
           />
           
           {/* Overlay content */}
           <div
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-              textAlign: 'center',
-              padding: '1rem'
+      
             }}
           >
             <motion.div
@@ -136,7 +117,7 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
             type: "spring"
           }}
         >
-          1945
+           17 de Octubre de 1945
         </motion.div>
         
         {/* Main content */}
@@ -164,17 +145,32 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
             El Nacimiento del Movimiento Peronista
           </motion.h2>
           
-          {/* Description */}
-          <motion.p 
-            style={{ 
-              fontSize: '1.1rem',
-              lineHeight: 1.6
-            }}
-            variants={itemVariants}
-          >
-            El 17 de octubre de 1945 se produjo una movilización masiva de trabajadores que exigían la liberación 
-            de Juan Domingo Perón, quien había sido detenido días antes por sus colegas militares.
-          </motion.p>
+          <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <motion.img 
+            src="/octubre.webp" 
+            style={{width: '100%', maxHeight: '400px', objectFit: 'cover'}}></motion.img>
+
+
+            {/* Description */}
+            <motion.p 
+              style={{ 
+                fontSize: '1.3rem',
+                lineHeight: 1.6,
+                position: 'absolute',
+                backgroundColor: '#000',
+                color: 'white',
+                padding: '20px',
+                zIndex: 99999,
+                width: '80%',
+                textAlign: 'center',
+              
+              }}
+              variants={itemVariants}
+            >
+              El 17 de octubre de 1945 se produjo una movilización masiva de trabajadores que exigían la liberación 
+              de Juan Domingo Perón, quien había sido detenido días antes por sus colegas militares.
+            </motion.p>
+          </div>
           
           {/* Two-column layout */}
           <motion.div
@@ -267,7 +263,6 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
               backgroundColor: 'rgba(30, 58, 138, 0.1)',
               padding: '1.5rem',
               borderRadius: '8px',
-              marginTop: '1rem'
             }}
             variants={itemVariants}
           >

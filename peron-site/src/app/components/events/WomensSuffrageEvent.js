@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from '../ScrollingBiography.module.css';
+import styles from '../ScrollingBiography.module.scss';
 
 // Women's Suffrage event with custom structure and animations
 const WomensSuffrageEvent = ({ isActive, isMobile }) => {
@@ -30,9 +30,6 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
         <motion.div 
           className={styles.yearBadge}
           style={{ 
-            backgroundColor: '#1e3a8a',
-            border: '2px solid #1e40af',
-            boxShadow: '0 4px 8px rgba(30, 58, 138, 0.3)'
           }}
           initial={{ opacity: 0, x: 30 }}
           animate={{ 
@@ -47,15 +44,12 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
           }}
         >
           <div>
-            1947
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: 'normal',
+         
+            <p style={{ 
               marginTop: '0.1rem'
             }}>
-              23 de septiembre
-            </span>
+              23 de septiembre de 1947
+            </p>
           </div>
         </motion.div>
         
@@ -98,39 +92,28 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
             maxWidth: '500px',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)'
           }}>
             <img 
-              src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UDEFC2SXUZBLXC6WGXCUUEVYCY.jpg" 
+              src="/evaVotoFemenino.jpg" 
               alt="Eva Perón durante la promulgación del voto femenino" 
               style={{
                 width: '100%',
-                height: 'auto',
-                display: 'block'
+                height: '100%',
+                display: 'block',
+                objectFit: 'cover'
               }}
             />
-            <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              width: '100%',
-              padding: '1rem',
-              background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-              color: 'white',
-              textAlign: 'center'
-            }}>
-              Eva Perón durante la promulgación de la Ley 13.010
-            </div>
+          
           </div>
-        </motion.div>
-        
-        {/* Main content */}
+
+           {/* Main content */}
         <motion.div
           style={{
             backgroundColor: 'rgba(30, 58, 138, 0.05)',
             padding: '1.5rem',
-            borderRadius: '8px',
-            marginBottom: '2rem'
+            borderTopRightRadius: '8px',
+            borderBottomRightRadius: '8px',
+            margin: '20px 0',
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ 
@@ -142,7 +125,7 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
           <h3 style={{ 
             fontSize: '1.3rem', 
             color: '#1e3a8a',
-            marginBottom: '1rem',
+    
             borderBottom: '1px solid rgba(30, 58, 138, 0.2)',
             paddingBottom: '0.5rem'
           }}>
@@ -159,12 +142,15 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
             derechos civiles en Argentina y fue el resultado de décadas de lucha del movimiento feminista argentino.
           </p>
         </motion.div>
+        </motion.div>
+        
+       
         
         {/* Eva's role section */}
         <motion.div
           style={{
             width: '100%',
-            marginBottom: '2rem'
+            marginBottom: '2rem',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ 
@@ -186,9 +172,10 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
             display: 'flex', 
             flexDirection: isMobile ? 'column' : 'row',
             gap: '2rem',
-            alignItems: 'center'
+            alignItems: 'center',
+      
           }}>
-            <div style={{ flex: '1' }}>
+            <div style={{ flex: '1', fontSize: '1.3rem' }}>
               <p style={{ lineHeight: 1.6, marginBottom: '1rem' }}>
                 Eva Perón fue una figura clave en la promoción y aprobación de esta ley. Desde su posición 
                 como primera dama, abogó incansablemente por los derechos políticos de las mujeres, 
@@ -203,19 +190,17 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
             
             <div style={{ 
               flex: '0 0 auto',
-              width: isMobile ? '100%' : '200px',
-              height: isMobile ? '200px' : '200px',
-              borderRadius: '50%',
+              width: isMobile ? '100%' : '300px',
+              height: isMobile ? '200px' : '300px',
+              borderRadius: '8px',
               overflow: 'hidden',
-              border: '5px solid #1e3a8a',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
             }}>
               <div style={{
                 width: '100%',
                 height: '100%',
-                backgroundImage: 'url(https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UDEFC2SXUZBLXC6WGXCUUEVYCY.jpg)',
+                backgroundImage: "url('/votoFemenino.jpg')",
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
               }} />
             </div>
           </div>
