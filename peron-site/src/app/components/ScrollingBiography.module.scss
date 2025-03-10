@@ -344,10 +344,6 @@ $breakpoint-mobile: 480px;
   .eventContent {
     margin-right: auto;
   }
-  
-  .yearBadge {
-    left: 20px;
-  }
 }
 
 .right {
@@ -356,7 +352,7 @@ $breakpoint-mobile: 480px;
   }
   
   .yearBadge {
-    right: 20px;
+    right: 30px;
   }
 }
 
@@ -369,6 +365,7 @@ $breakpoint-mobile: 480px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 /* Event content styling */
@@ -400,11 +397,11 @@ $breakpoint-mobile: 480px;
 /* Event content */
 .eventContent {
   position: relative;
-  padding: 3rem;
   border-radius: 8px;
   z-index: 2;
   margin: 2rem auto;
   max-height: 90vh;
+  overflow: visible;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.3) transparent;

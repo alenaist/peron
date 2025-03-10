@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div>
       <ScrollingBiography />
       <Analytics />
     </div>

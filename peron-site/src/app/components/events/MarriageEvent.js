@@ -126,20 +126,23 @@ const MarriageEvent = ({ isActive, isMobile }) => {
                 src="/casamiento.png" 
                 alt="Boda de Juan Domingo Perón y Eva Duarte" 
                 style={{ 
-                  width: '100%', 
+                  width: '100%',
                   borderRadius: '8px',
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                  maxHeight: '400px',
+                  objectFit: 'cover',
+                  objectPosition: 'center 0'
                 }}
               />
             </motion.div>
             
-            <div style={{ flex: 1 }}>
-              <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
+            <div style={{ flex: 1, fontSize: '1.5rem' }}>
+              <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif', fontSize: '1.4rem' }}>
                 El 22 de octubre de 1945, apenas días después del histórico 17 de octubre, 
                 Juan Domingo Perón y Eva Duarte contrajeron matrimonio civil en Junín, provincia de Buenos Aires.
               </p>
               
-              <p className={styles.garamondText} style={{ marginTop: '1rem', fontFamily: 'EB Garamond, serif' }}>
+              <p className={styles.garamondText} style={{ marginTop: '1rem', fontFamily: 'EB Garamond, serif',  fontSize: '1.4rem'  }}>
                 La ceremonia fue íntima, lejos del bullicio de Buenos Aires, y marcó el inicio formal 
                 de una de las parejas más influyentes en la historia política argentina.
               </p>

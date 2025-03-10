@@ -90,7 +90,7 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
             delay: 0.3,
             type: "spring"
           }}
-          style={{ fontFamily: 'EB Garamond, serif' }}
+          style={{ fontFamily: 'EB Garamond, serif', textAlign: 'right' }}
         >
           El Encuentro con Eva Duarte
         </motion.h2>
