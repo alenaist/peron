@@ -155,7 +155,7 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
           playsInline
           className={styles.backgroundVideo}
         >
-          <source src="/videoinicial.mp4" type="video/mp4" />
+          <source src="/videoInicial.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className={styles.videoOverlay}></div>
