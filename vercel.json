@@ -1,0 +1,8 @@
+{
+  "framework": "nextjs",
+  "outputDirectory": "peron-site/.next",
+  "buildCommand": "cd peron-site && npm install && npm run build",
+  "devCommand": "cd peron-site && npm run dev",
+  "installCommand": "cd peron-site && npm install",
+  "rootDirectory": "peron-site"
+} 
