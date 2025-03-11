@@ -239,6 +239,13 @@ const EventWrapper = React.memo(({ Component, isActive, isMobile }) => {
     if (isActive && contentRef.current) {
       // Immediate scroll reset
       contentRef.current.scrollTop = 0;
+      
+      // Additional delayed reset to ensure it works after animations
+      setTimeout(() => {
+        if (contentRef.current) {
+          contentRef.current.scrollTop = 0;
+        }
+      }, 50);
     }
   }, [isActive]);
   
@@ -260,8 +267,6 @@ const ScrollingBiography = () => {
   useEffect(() => {
     const totalSections = biographyEvents.length + 1; // +1 for hero section
     const progress = currentSection / (totalSections - 1);
-    
-    console.log('Section:', currentSection, 'Progress:', progress.toFixed(2));
   }, [currentSection]);
   
   // Check if device is mobile
@@ -517,7 +522,8 @@ const ScrollingBiography = () => {
   // Function to navigate to a specific section
   const navigateToSection = useCallback((index) => {
     if (isTransitioning || index === currentSection) return;
-    
+
+  
     setIsTransitioning(true);
     setCurrentSection(index);
     
@@ -529,6 +535,20 @@ const ScrollingBiography = () => {
       return prev;
     });
     
+    // Reset scroll position of any active event content
+    const activeEventContent = document.querySelector(`.${styles.eventSection}[style*="display: flex"] .${styles.eventContent}`);
+    if (activeEventContent) {
+      activeEventContent.scrollTop = 0;
+    }
+    
+    // Also reset scroll for the next event content after a short delay
+    setTimeout(() => {
+      const nextEventContent = document.querySelector(`.${styles.eventSection}[style*="display: flex"] .${styles.eventContent}`);
+      if (nextEventContent) {
+        nextEventContent.scrollTop = 0;
+      }
+    }, 100);
+    
     setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
@@ -536,6 +556,8 @@ const ScrollingBiography = () => {
   
   // Function to render the appropriate event component based on the current section
   const renderEventComponent = (sectionIndex) => {
+
+
     // If it's the hero section, return null
     if (sectionIndex === 0) return null;
     
