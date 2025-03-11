@@ -104,7 +104,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
-            Después de 18 años de exilio, Juan Domingo Perón regresó definitivamente a Argentina 
+            Después de <b>18 años de exilio</b>, Juan Domingo Perón regresó definitivamente a Argentina 
             el 20 de junio de 1973. Su retorno fue posible gracias a la apertura democrática 
             impulsada por el gobierno militar del general Alejandro Agustín Lanusse, quien 
             convocó a elecciones en marzo de 1973.
@@ -147,16 +147,6 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             </p>
           </div>
           
-          <h3 style={{ 
-            fontSize: '1.4rem', 
-            color: '#1e3a8a', 
-            marginTop: '2rem',
-            marginBottom: '0.5rem',
-            fontWeight: 600,
-            fontFamily: 'EB Garamond, serif'
-          }}>
-            Un Regreso Sangriento
-          </h3>
           
           {/* Comprehensive masonry grid layout with text and images */}
           <motion.div 
@@ -173,7 +163,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               style={{
                 gridColumn: '1 / span 2',
                 gridRow: '1',
-                padding: '1rem',
+                padding: '0 3rem',
                 backgroundColor: 'rgba(30, 58, 138, 0.05)',
                 borderRadius: '8px',
                 display: 'flex',
@@ -187,6 +177,16 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
+              
+              <h3 style={{ 
+                fontSize: '1.4rem', 
+                color: '#1e3a8a', 
+                marginBottom: '0.5rem',
+                fontWeight: 600,
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Un Regreso Sangriento
+              </h3>
               <p className={styles.garamondText} style={{ 
                 fontFamily: 'EB Garamond, serif',
                 margin: 0,
@@ -195,7 +195,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               }}>
                 El regreso de Perón estuvo marcado por la tragedia. Miles de personas se congregaron 
                 en Ezeiza para recibirlo, pero el evento derivó en un enfrentamiento violento entre 
-                facciones de izquierda y derecha del peronismo, conocido como la "Masacre de Ezeiza".
+                facciones de izquierda y derecha del peronismo, conocido como la <b>Masacre de Ezeiza</b>.
               </p>
             </motion.div>
             
@@ -260,7 +260,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               style={{
                 gridColumn: '2',
                 gridRow: '2',
-                padding: '1rem',
+                padding: '2rem',
                 backgroundColor: 'rgba(225, 29, 72, 0.05)',
                 borderRadius: '8px',
                 display: 'flex',
@@ -278,8 +278,8 @@ const ReturnEvent = ({ isActive, isMobile }) => {
                 fontFamily: 'EB Garamond, serif',
                 margin: 0,
                 fontStyle: 'italic',
-                fontSize: '1rem',
-                lineHeight: 1.5
+                fontSize: '1.2rem',
+                lineHeight: 1.5,
               }}>
                 "La masacre dejó decenas de muertos y heridos, convirtiéndose en uno de los episodios más trágicos de la historia política argentina."
               </p>
@@ -318,7 +318,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               style={{
                 gridColumn: '2 / span 2',
                 gridRow: '3',
-                padding: '1rem',
+                padding: '2rem',
                 backgroundColor: 'rgba(30, 58, 138, 0.05)',
                 borderRadius: '8px',
                 display: 'flex',

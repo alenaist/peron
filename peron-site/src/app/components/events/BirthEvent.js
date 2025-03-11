@@ -217,7 +217,7 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
               fontFamily: 'EB Garamond, serif',
               marginLeft: '140px'
             }}>
-              Aunque aún gateo, ya sueño con el día en que los trabajadores caminarán erguidos. Mis primeras palabras no serán 'mamá' o 'papá', sino 'justicia social'. -Bebe Perón (?)
+              Aunque aún gateo, ya sueño con el día en que los trabajadores caminarán erguidos. Mis primeras palabras no serán 'mamá' o 'papá', sino 'justicia social'. <br /><b>- Bebe Perón</b>
             </p>
           </motion.div>
           

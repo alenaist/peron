@@ -255,19 +255,20 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: isActive ? 1 : 0 }}
           transition={{ duration: 0.6, delay: 1.5 }}
+          
         >
           <div style={{
             position: 'absolute',
-            top: '10px',
-            left: '10px',
-            fontSize: '3rem',
-            opacity: 0.2,
+            top: '-79px',
+            left: '-22px',
+            fontSize: '13rem',
+            opacity: 1,
             fontFamily: 'serif'
           }}>
             "
           </div>
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '2rem', 
             fontStyle: 'italic',
             textAlign: 'center',
             lineHeight: 1.6,
@@ -278,7 +279,6 @@ const EvaDeathEvent = ({ isActive, isMobile }) => {
           </p>
           <footer style={{ 
             textAlign: 'right', 
-            marginTop: '1rem',
             fontWeight: 'bold'
           }}>
             — Atribuido a Eva Perón

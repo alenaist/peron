@@ -106,7 +106,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
           <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
             El 16 de septiembre de 1955, un golpe militar autodenominado "Revolución Libertadora" 
             derrocó al gobierno constitucional de Juan Domingo Perón, poniendo fin a su segunda 
-            presidencia e iniciando un período de <b>18 años de exilio</b> para el líder justicialista.
+            presidencia e iniciando un período de 18 años de exilio para el líder justicialista.
           </p>
           
           <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif', marginTop: '1rem' }}>
@@ -142,7 +142,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             <motion.div
               style={{
                 gridColumn: '1',
-                gridRow: '1 / span 2',
+                gridRow: '2 / span 1',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 height: '100%',
@@ -161,24 +161,10 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
                 style={{ 
                   width: '100%', 
                   height: '100%', 
-                  objectFit: 'cover',
+             
                   display: 'block'
                 }}
               />
-              <div style={{
-                position: 'absolute',
-                bottom: '0',
-                left: '0',
-                right: '0',
-                background: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                padding: '0.5rem',
-                fontSize: '0.8rem',
-                fontStyle: 'italic',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                Bombardeo a Plaza de Mayo, 16 de junio de 1955
-              </div>
             </motion.div>
             
             {/* Second image */}
@@ -199,29 +185,15 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <img 
-                src="/revolucion-libertadora1.webp" 
+                src="/bombardeo2.jpg" 
                 alt="Tanques de la Revolución Libertadora" 
                 style={{ 
                   width: '100%', 
                   height: '100%', 
-                  objectFit: 'cover',
+                 
                   display: 'block'
                 }}
               />
-              <div style={{
-                position: 'absolute',
-                bottom: '0',
-                left: '0',
-                right: '0',
-                background: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                padding: '0.5rem',
-                fontSize: '0.8rem',
-                fontStyle: 'italic',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                Tanques en las calles durante el golpe
-              </div>
             </motion.div>
             
             {/* Third image */}
@@ -242,35 +214,50 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <img 
-                src="/lonardi.webp" 
-                alt="General Eduardo Lonardi" 
+                src="/bombardeo3.webp" 
                 style={{ 
                   width: '100%', 
                   height: '100%', 
-                  objectFit: 'cover',
+         
                   display: 'block'
                 }}
               />
-              <div style={{
-                position: 'absolute',
-                bottom: '0',
-                left: '0',
-                right: '0',
-                background: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                padding: '0.5rem',
-                fontSize: '0.8rem',
-                fontStyle: 'italic',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                General Eduardo Lonardi, líder del golpe
-              </div>
+          
             </motion.div>
             
             {/* Fourth image */}
             <motion.div
               style={{
-                gridColumn: '2 / span 2',
+                gridColumn: '1 / span 1',
+                gridRow: '1',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <img 
+                src="/bombarde4.jpg" 
+                alt="" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+               
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+
+                {/* Fourth image */}
+                <motion.div
+              style={{
+                gridColumn: '2 / span 1',
                 gridRow: '2',
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -285,30 +272,49 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
               transition={{ duration: 0.5, delay: 0.9 }}
             >
               <img 
-                src="/peron-exilio.webp" 
-                alt="Perón en el exilio" 
+                src="/bombardeo5.jpg" 
+                alt="" 
                 style={{ 
                   width: '100%', 
                   height: '100%', 
-                  objectFit: 'cover',
+            
                   display: 'block'
                 }}
               />
-              <div style={{
-                position: 'absolute',
-                bottom: '0',
-                left: '0',
-                right: '0',
-                background: 'rgba(0,0,0,0.7)',
-                color: 'white',
-                padding: '0.5rem',
-                fontSize: '0.8rem',
-                fontStyle: 'italic',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                Perón durante su exilio en España
-              </div>
             </motion.div>
+
+                 {/* Fourth image */}
+                 <motion.div
+              style={{
+                gridColumn: '3 / span 1',
+                gridRow: '2',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <img 
+                src="/bombardeo6.jpg" 
+                alt="" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+             
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+
+
+
+
           </motion.div>
           
           <h3 style={{ 

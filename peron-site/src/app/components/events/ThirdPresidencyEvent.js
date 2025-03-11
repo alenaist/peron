@@ -127,7 +127,7 @@ const ThirdPresidencyEvent = ({ isActive, isMobile }) => {
                 borderRadius: '4px',
                 boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 objectFit: 'cover',
-                objectPosition: '0 -95px'
+                objectPosition: '0 center'
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ 

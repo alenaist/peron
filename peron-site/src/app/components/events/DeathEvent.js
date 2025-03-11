@@ -76,7 +76,7 @@ const DeathEvent = ({ isActive, isMobile }) => {
           <motion.div 
             className={styles.yearBadge}
             style={{ 
-       
+              top: '-40px'
             }}
             initial={{ scale: 0, rotate: -10 }}
             animate={{ 
@@ -151,7 +151,6 @@ const DeathEvent = ({ isActive, isMobile }) => {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '500px',
             borderRadius: '8px',
             overflow: 'hidden',
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
