@@ -230,7 +230,7 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
           {/* Quote */}
           <motion.blockquote
             style={{
-              margin: '1.5rem 0',
+              margin: '1.5rem 0 0 0',
               padding: '1.5rem',
               backgroundColor: 'rgba(30, 58, 138, 0.05)',
               borderRadius: '8px',
@@ -257,11 +257,16 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
             </footer>
           </motion.blockquote>
           
-          {/* Impact section */}
+
+          <div style={{ display: 'flex' }}>
+
+
+          <motion.img src="/lealtadPortada.jpg" style={{width: '50%',  maxHeight: '400px', objectFit: 'cover'}}></motion.img>
+
           <motion.div
             style={{
               backgroundColor: 'rgba(30, 58, 138, 0.1)',
-              padding: '1.5rem',
+              padding: '1.5rem 3rem',
               borderRadius: '8px',
             }}
             variants={itemVariants}
@@ -373,6 +378,10 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
               </div>
             </div>
           </motion.div>
+
+          </div>
+          {/* Impact section */}
+          
         </motion.div>
       </div>
     </motion.section>
