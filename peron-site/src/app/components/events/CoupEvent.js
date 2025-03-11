@@ -34,6 +34,13 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
       }
     }
   }, [isActive]);
+  
+  // Scroll to top when component becomes active
+  useEffect(() => {
+    if (isActive && contentRef && contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [isActive, contentRef]);
 
   return (
     <motion.section 
