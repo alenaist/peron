@@ -158,14 +158,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             Un Regreso Sangriento
           </h3>
           
-          <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
-            El regreso de Perón estuvo marcado por la tragedia. Miles de personas se congregaron 
-            en Ezeiza para recibirlo, pero el evento derivó en un enfrentamiento violento entre 
-            facciones de izquierda y derecha del peronismo, conocido como la "Masacre de Ezeiza", 
-            que dejó decenas de muertos y heridos.
-          </p>
-
-          {/* Masonry grid layout for images */}
+          {/* Comprehensive masonry grid layout with text and images */}
           <motion.div 
             className={styles.masonryGrid}
             initial={{ opacity: 0, y: 20 }}
@@ -175,11 +168,42 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            {/* First image - larger, spans 2 columns */}
+            {/* Main text block */}
             <motion.div
               style={{
-                gridColumn: 'span 2',
-                gridRow: 'span 2',
+                gridColumn: '1 / span 2',
+                gridRow: '1',
+                padding: '1rem',
+                backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <p className={styles.garamondText} style={{ 
+                fontFamily: 'EB Garamond, serif',
+                margin: 0,
+                fontSize: '1.1rem',
+                lineHeight: 1.6
+              }}>
+                El regreso de Perón estuvo marcado por la tragedia. Miles de personas se congregaron 
+                en Ezeiza para recibirlo, pero el evento derivó en un enfrentamiento violento entre 
+                facciones de izquierda y derecha del peronismo, conocido como la "Masacre de Ezeiza".
+              </p>
+            </motion.div>
+            
+            {/* First image - large */}
+            <motion.div
+              style={{
+                gridColumn: '3',
+                gridRow: '1 / span 2',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 height: '100%'
@@ -189,7 +213,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
                 opacity: isActive ? 1 : 0,
                 scale: isActive ? 1 : 0.95
               }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
             >
               <img 
                 src="/ezeiza01.jpeg" 
@@ -206,35 +230,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             {/* Second image */}
             <motion.div
               style={{
-                gridColumn: '3',
-                gridRow: '1',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                height: '100%'
-              }}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ 
-                opacity: isActive ? 1 : 0,
-                scale: isActive ? 1 : 0.95
-              }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <img 
-                src="/ezeiza02.avif" 
-                alt="Manifestantes en el regreso de Perón" 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-              />
-            </motion.div>
-            
-            {/* Third image */}
-            <motion.div
-              style={{
-                gridColumn: '3',
+                gridColumn: '1',
                 gridRow: '2',
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -248,6 +244,64 @@ const ReturnEvent = ({ isActive, isMobile }) => {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <img 
+                src="/ezeiza02.avif" 
+                alt="Manifestantes en el regreso de Perón" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+            
+            {/* Quote/fact block */}
+            <motion.div
+              style={{
+                gridColumn: '2',
+                gridRow: '2',
+                padding: '1rem',
+                backgroundColor: 'rgba(225, 29, 72, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <p className={styles.garamondText} style={{ 
+                fontFamily: 'EB Garamond, serif',
+                margin: 0,
+                fontStyle: 'italic',
+                fontSize: '1rem',
+                lineHeight: 1.5
+              }}>
+                "La masacre dejó decenas de muertos y heridos, convirtiéndose en uno de los episodios más trágicos de la historia política argentina."
+              </p>
+            </motion.div>
+            
+            {/* Third image */}
+            <motion.div
+              style={{
+                gridColumn: '1',
+                gridRow: '3',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+            >
+              <img 
                 src="/ezeiza03.jpg" 
                 alt="Violencia durante la Masacre de Ezeiza" 
                 style={{ 
@@ -258,11 +312,36 @@ const ReturnEvent = ({ isActive, isMobile }) => {
                 }}
               />
             </motion.div>
+            
+            {/* Conclusion text */}
+            <motion.div
+              style={{
+                gridColumn: '2 / span 2',
+                gridRow: '3',
+                padding: '1rem',
+                backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+            >
+              <p className={styles.garamondText} style={{ 
+                fontFamily: 'EB Garamond, serif',
+                margin: 0,
+                fontSize: '1.1rem',
+                lineHeight: 1.6
+              }}>
+                Este episodio evidenció las profundas divisiones dentro del movimiento peronista, que Perón intentaría reconciliar durante su breve tercer mandato.
+              </p>
+            </motion.div>
           </motion.div>
-          
-          <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
-            Este episodio evidenció las profundas divisiones dentro del movimiento peronista, que Perón intentaría reconciliar durante su breve tercer mandato.
-          </p>
           
           <h3 style={{ 
             fontSize: '1.4rem', 
