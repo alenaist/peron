@@ -82,30 +82,12 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
   const yearTextRef = useRef(null);
   const videoRef = useRef(null);
   
+  // Reset animations when section becomes inactive
   useEffect(() => {
-    if (isActive && yearTextRef.current) {
-      // Create the split type instance
-      const yearText = new SplitType(yearTextRef.current, {
-        types: 'chars',
-        tagName: 'span'
-      });
-      
-      // Animate each character
-      const chars = yearText.chars;
-      if (chars) {
-        chars.forEach((char, index) => {
-          char.style.display = 'inline-block';
-          char.style.opacity = '0';
-          char.style.transform = 'translateY(20px)';
-          char.style.transition = `opacity 0.2s ease, transform 0.2s ease`;
-          char.style.transitionDelay = `${0.3 + index * 0.05}s`;
-          
-          setTimeout(() => {
-            char.style.opacity = '1';
-            char.style.transform = 'translateY(0)';
-          }, 100);
-        });
-      }
+    if (!isActive && yearTextRef.current) {
+      // Reset the subtitle to its initial state when section is not active
+      yearTextRef.current.style.opacity = "0";
+      yearTextRef.current.style.transform = "translateY(50px)";
     }
   }, [isActive]);
   
@@ -166,6 +148,37 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`${styles.heroTitle} ${styles.garamondTitle}`}
+        onAnimationComplete={() => {
+          // This function will be called when the title animation completes
+          if (yearTextRef.current) {
+            // Trigger the subtitle animation by adding a class
+            yearTextRef.current.style.opacity = "1";
+            yearTextRef.current.style.transform = "translateY(0)";
+            
+            // Create the split type instance for the year text
+            const yearText = new SplitType(yearTextRef.current, {
+              types: 'chars',
+              tagName: 'span'
+            });
+            
+            // Animate each character
+            const chars = yearText.chars;
+            if (chars) {
+              chars.forEach((char, index) => {
+                char.style.display = 'inline-block';
+                char.style.opacity = '0';
+                char.style.transform = 'translateY(20px)';
+                char.style.transition = `opacity 0.2s ease, transform 0.2s ease`;
+                char.style.transitionDelay = `${0.1 + index * 0.05}s`;
+                
+                setTimeout(() => {
+                  char.style.opacity = '1';
+                  char.style.transform = 'translateY(0)';
+                }, 100);
+              });
+            }
+          }
+        }}
       >
         Juan Domingo Perón
       </motion.h1>
@@ -173,6 +186,8 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
       <motion.h2 
         ref={yearTextRef}
         className={`${styles.heroSubtitle} ${styles.garamondTitle} ${styles.typingAnimation}`}
+        initial={{ opacity: 0, y: 50 }}
+        style={{ opacity: 0, transform: "translateY(50px)" }}
       >
         1895 - 1974
       </motion.h2>
