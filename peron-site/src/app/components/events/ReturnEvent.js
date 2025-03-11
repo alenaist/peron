@@ -155,7 +155,7 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             fontWeight: 600,
             fontFamily: 'EB Garamond, serif'
           }}>
-            Un Regreso Complejo
+            Un Regreso Sangriento
           </h3>
           
           <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
@@ -164,10 +164,104 @@ const ReturnEvent = ({ isActive, isMobile }) => {
             facciones de izquierda y derecha del peronismo, conocido como la "Masacre de Ezeiza", 
             que dejó decenas de muertos y heridos.
           </p>
+
+          {/* Masonry grid layout for images */}
+          <motion.div 
+            className={styles.masonryGrid}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: isActive ? 1 : 0,
+              y: isActive ? 0 : 20
+            }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            {/* First image - larger, spans 2 columns */}
+            <motion.div
+              style={{
+                gridColumn: 'span 2',
+                gridRow: 'span 2',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <img 
+                src="/ezeiza01.jpeg" 
+                alt="Multitud esperando a Perón en Ezeiza" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+            
+            {/* Second image */}
+            <motion.div
+              style={{
+                gridColumn: '3',
+                gridRow: '1',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <img 
+                src="/ezeiza02.avif" 
+                alt="Manifestantes en el regreso de Perón" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+            
+            {/* Third image */}
+            <motion.div
+              style={{
+                gridColumn: '3',
+                gridRow: '2',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <img 
+                src="/ezeiza03.jpg" 
+                alt="Violencia durante la Masacre de Ezeiza" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </motion.div>
+          </motion.div>
           
-          <p className={styles.garamondText} style={{ marginTop: '1rem', fontFamily: 'EB Garamond, serif' }}>
-            Este episodio evidenció las profundas divisiones dentro del movimiento peronista, 
-            que Perón intentaría reconciliar durante su breve tercer mandato.
+          <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
+            Este episodio evidenció las profundas divisiones dentro del movimiento peronista, que Perón intentaría reconciliar durante su breve tercer mandato.
           </p>
           
           <h3 style={{ 
