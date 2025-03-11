@@ -214,7 +214,6 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
             <p style={{ 
               fontStyle: 'italic', 
               fontSize: '1.2rem',
-              width: '60%',
               fontFamily: 'EB Garamond, serif',
               marginLeft: '140px'
             }}>
