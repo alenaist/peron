@@ -132,7 +132,8 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             borderRadius: '8px',
             overflow: 'hidden',
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
-            border: '10px solid white'
+            border: '10px solid white',
+            maxHeight: '460px'
           }}>
             <img 
               src="isabelPeron01.jpg" 
@@ -142,7 +143,8 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block',
-                rotate: '2deg'
+                rotate: '2deg',
+                objectPosition: 'center -20px'
               }}
             />
           </div>
