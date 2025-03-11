@@ -112,18 +112,6 @@ export const biographyEvents = [
     source: 'https://en.wikipedia.org/wiki/Eva_Per%C3%B3n#Political_role'
   },
   {
-    id: 'eva-death',
-    year: '1952',
-    day: '26 de julio',
-    title: 'Fallece Eva Perón',
-    description: 'Eva Perón fallece el 26 de julio de 1952 a los 33 años debido a un cáncer.',
-    details: 'Su muerte causó un duelo nacional sin precedentes. Su cuerpo fue embalsamado y expuesto en la sede de la CGT. Recibió el título de "Jefa Espiritual de la Nación" y "Mártir del Trabajo".',
-    category: 'personal',
-    alignment: 'right',
-    imageUrl: 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NjAzNTI5MDg3MzM5/eva-peron-funeral.jpg',
-    source: 'https://en.wikipedia.org/wiki/Eva_Per%C3%B3n#Death'
-  },
-  {
     id: 'second-presidency',
     year: '1952',
     day: '4 de junio',
@@ -134,6 +122,18 @@ export const biographyEvents = [
     alignment: 'left',
     imageUrl: 'https://static01.nyt.com/images/2016/08/28/books/review/28KAISER/28KAISER-jumbo.jpg',
     source: 'https://en.wikipedia.org/wiki/Presidency_of_Juan_Per%C3%B3n_(1952%E2%80%931955)'
+  },
+  {
+    id: 'eva-death',
+    year: '1952',
+    day: '26 de julio',
+    title: 'Fallece Eva Perón',
+    description: 'Eva Perón fallece el 26 de julio de 1952 a los 33 años debido a un cáncer.',
+    details: 'Su muerte causó un duelo nacional sin precedentes. Su cuerpo fue embalsamado y expuesto en la sede de la CGT. Recibió el título de "Jefa Espiritual de la Nación" y "Mártir del Trabajo".',
+    category: 'personal',
+    alignment: 'right',
+    imageUrl: 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NjAzNTI5MDg3MzM5/eva-peron-funeral.jpg',
+    source: 'https://en.wikipedia.org/wiki/Eva_Per%C3%B3n#Death'
   },
   {
     id: 'coup',
