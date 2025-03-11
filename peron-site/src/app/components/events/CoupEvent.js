@@ -106,45 +106,268 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
           <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif' }}>
             El 16 de septiembre de 1955, un golpe militar autodenominado "Revolución Libertadora" 
             derrocó al gobierno constitucional de Juan Domingo Perón, poniendo fin a su segunda 
-            presidencia e iniciando un período de 18 años de exilio para el líder justicialista.
+            presidencia e iniciando un período de <b>18 años de exilio</b> para el líder justicialista.
           </p>
           
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            margin: '1.5rem 0',
-            position: 'relative'
-          }}>
-            <motion.img 
-              src="/bombardeo.webp" 
-              alt="Bombardeo a Plaza de Mayo" 
-              style={{ 
-                maxWidth: '100%', 
-                height: 'auto', 
-                borderRadius: '4px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+          {/* Masonry grid layout with multiple images */}
+          <motion.div 
+            className={styles.masonryGrid}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: isActive ? 1 : 0,
+              y: isActive ? 0 : 20
+            }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            {/* Main text block */}
+            <motion.div
+              style={{
+                gridColumn: '1 / span 2',
+                gridRow: '1',
+                padding: '1.5rem',
+                backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ 
-                opacity: isActive ? 1 : 0, 
-                scale: isActive ? 1 : 0.9 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <h3 style={{ 
+                fontSize: '1.4rem', 
+                color: '#1e3a8a', 
+                marginBottom: '0.5rem',
+                fontWeight: 600,
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Bombardeo a Plaza de Mayo
+              </h3>
+              <p className={styles.garamondText} style={{ 
+                fontFamily: 'EB Garamond, serif',
+                margin: 0,
+                fontSize: '1.1rem',
+                lineHeight: 1.6
+              }}>
+                El 16 de junio de 1955, aviones de la Marina bombardearon la Plaza de Mayo causando más de 300 muertos civiles en un 
+                intento fallido de golpe de Estado, que sería el preludio de la "Revolución Libertadora".
+              </p>
+            </motion.div>
+            
+            {/* First image - large */}
+            <motion.div
+              style={{
+                gridColumn: '3',
+                gridRow: '1 / span 2',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
               }}
               transition={{ duration: 0.5, delay: 0.7 }}
-            />
-            <p className={styles.garamondQuote} style={{ 
-              position: 'absolute', 
-              bottom: '0', 
-              background: 'rgba(0,0,0,0.7)', 
-              color: 'white', 
-              padding: '0.3rem 0.6rem', 
-              borderRadius: '2px',
-              fontSize: '0.8rem',
-              fontStyle: 'italic',
-              fontFamily: 'EB Garamond, serif'
-            }}>
-              Bombardeo a Plaza de Mayo, 16 de junio de 1955
-            </p>
-          </div>
+            >
+              <img 
+                src="/bombardeo.webp" 
+                alt="Bombardeo a Plaza de Mayo" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                background: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '0.5rem',
+                fontSize: '0.8rem',
+                fontStyle: 'italic',
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Bombardeo a Plaza de Mayo, 16 de junio de 1955
+              </div>
+            </motion.div>
+            
+            {/* Second image */}
+            <motion.div
+              style={{
+                gridColumn: '1',
+                gridRow: '2',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <img 
+                src="/revolucion-libertadora1.webp" 
+                alt="Tanques de la Revolución Libertadora" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                background: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '0.5rem',
+                fontSize: '0.8rem',
+                fontStyle: 'italic',
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Tanques en las calles durante el golpe
+              </div>
+            </motion.div>
+            
+            {/* Quote/fact block */}
+            <motion.div
+              style={{
+                gridColumn: '2',
+                gridRow: '2',
+                padding: '1.5rem',
+                backgroundColor: 'rgba(4, 120, 87, 0.05)',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <p className={styles.garamondText} style={{ 
+                fontFamily: 'EB Garamond, serif',
+                margin: 0,
+                fontStyle: 'italic',
+                fontSize: '1.2rem',
+                lineHeight: 1.5,
+              }}>
+                "Ni vencedores ni vencidos"
+              </p>
+              <p style={{
+                fontSize: '0.9rem',
+                marginTop: '0.5rem',
+                textAlign: 'right',
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                — Lema inicial del general Eduardo Lonardi
+              </p>
+            </motion.div>
+            
+            {/* Third image */}
+            <motion.div
+              style={{
+                gridColumn: '1',
+                gridRow: '3',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
+              <img 
+                src="/lonardi.webp" 
+                alt="General Eduardo Lonardi" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                background: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '0.5rem',
+                fontSize: '0.8rem',
+                fontStyle: 'italic',
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                General Eduardo Lonardi, líder del golpe
+              </div>
+            </motion.div>
+            
+            {/* Fourth image */}
+            <motion.div
+              style={{
+                gridColumn: '2 / span 2',
+                gridRow: '3',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                height: '100%',
+                position: 'relative'
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 0.95
+              }}
+              transition={{ duration: 0.5, delay: 1.1 }}
+            >
+              <img 
+                src="/peron-exilio.webp" 
+                alt="Perón en el exilio" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                background: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '0.5rem',
+                fontSize: '0.8rem',
+                fontStyle: 'italic',
+                fontFamily: 'EB Garamond, serif'
+              }}>
+                Perón durante su exilio en España
+              </div>
+            </motion.div>
+          </motion.div>
           
           <h3 style={{ 
             fontSize: '1.4rem', 
