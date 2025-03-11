@@ -113,7 +113,7 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxHeight: '240px',
+            maxHeight: '280px',
             borderRadius: '8px',
             overflow: 'hidden',
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)'
@@ -130,7 +130,9 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
                 height: 'auto',
                 display: 'block',
                 top: '-100px',
-                position: 'relative'
+                position: 'relative',
+                objectFit: 'cover',
+                objectPosition: 'center -140p',
               }}
             />
           </div>

@@ -117,7 +117,7 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
   }, []);
 
   return (
-    <motion.div 
+    <motion.section 
       className={styles.heroSection}
       initial={false}
       animate={{ 
@@ -126,9 +126,11 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
         display: isActive ? 'flex' : 'none'
       }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
+      aria-label="Introducción a Juan Domingo Perón"
+      role="region"
     >
       {/* Video Background */}
-      <div className={styles.videoBackground}>
+      <div className={styles.videoBackground} aria-hidden="true">
         <video 
           ref={videoRef}
           autoPlay 
@@ -218,13 +220,13 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
           }}
           tabIndex={0}
           role="button"
-          aria-label="Desplácese para explorar"
+          aria-label="Desplácese para explorar la biografía"
         >
           <span>Desplácese para explorar</span>
-          <div className={styles.scrollArrow} />
+          <div className={styles.scrollArrow} aria-hidden="true"></div>
         </motion.div>
       )}
-    </motion.div>
+    </motion.section>
   );
 };
 
@@ -666,14 +668,16 @@ const ScrollingBiography = () => {
   };
   
   return (
-    <div className={styles.biographyContainer} ref={containerRef}>
+    <div className={styles.biographyContainer}>
       {/* Timeline navigation */}
-      <TimelineIndicator 
-        currentSection={currentSection}
-        visitedSections={visitedSections}
-        navigateToSection={navigateToSection}
-        isMobile={isMobile}
-      />
+      <nav className={styles.timelineContainer} aria-label="Línea de tiempo biográfica">
+        <TimelineIndicator 
+          currentSection={currentSection}
+          visitedSections={visitedSections}
+          navigateToSection={navigateToSection}
+          isMobile={isMobile}
+        />
+      </nav>
       
       {/* Hero section */}
       <HeroSection 
