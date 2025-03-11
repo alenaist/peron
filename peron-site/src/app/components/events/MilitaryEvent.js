@@ -115,7 +115,7 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
             src="/militar01.jpg" 
             alt="Juan Domingo Perón en uniforme militar" 
             style={{ 
-              maxWidth: '200px', 
+              maxWidth: '260px', 
               height: 'auto', 
               borderRadius: '4px',
               boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
