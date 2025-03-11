@@ -96,7 +96,7 @@ const HeroSection = ({ isActive, navigateToSection, isMobile }) => {
     if (videoRef.current) {
       // Function to set the current time
       const setVideoTime = () => {
-        videoRef.current.currentTime = 4;
+        videoRef.current.currentTime = 10;
       };
       
       // Set current time when video metadata is loaded

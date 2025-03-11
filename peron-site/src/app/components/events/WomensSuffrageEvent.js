@@ -159,14 +159,6 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
           }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <h3 style={{ 
-            fontSize: '1.3rem', 
-            color: '#1e3a8a',
-            marginBottom: '1rem',
-            textAlign: 'center'
-          }}>
-            El Papel de Eva Perón
-          </h3>
           
           <div style={{ 
             display: 'flex', 
@@ -176,6 +168,14 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
       
           }}>
             <div style={{ flex: '1', fontSize: '1.3rem' }}>
+            <h3 style={{ 
+            fontSize: '1.8rem', 
+            color: '#1e3a8a',
+            marginBottom: '1rem',
+          }}>
+            El Papel de Eva Perón
+          </h3>
+          
               <p style={{ lineHeight: 1.6, marginBottom: '1rem' }}>
                 Eva Perón fue una figura clave en la promoción y aprobación de esta ley. Desde su posición 
                 como primera dama, abogó incansablemente por los derechos políticos de las mujeres, 
