@@ -197,7 +197,7 @@ const BirthEvent = ({ isActive, isMobile, contentRef }) => {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
 
-            <div style={{ position: 'absolute', top: -229, left: -30 }}>
+            <div style={{ position: 'absolute', left: '-30px', top: '-15px'}}>
               <img 
                 className={styles.baby01} 
                 src="/nacimiento/baby01.png" 

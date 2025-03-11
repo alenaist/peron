@@ -21,6 +21,7 @@ $breakpoint-mobile: 480px;
   height: 100vh;
   overflow: hidden;
   font-family: var(--font-primary);
+
 }
 
 /* Timeline container as a fixed sidebar */
@@ -308,6 +309,9 @@ $breakpoint-mobile: 480px;
   width: calc(100% - #{$timeline-width}); /* Subtract the width of the timeline container */
   margin-left: $timeline-width; /* Match the width of the timeline container */
   height: 100vh;
+  @media screen and (max-width: 768px) {
+   margin-top: 20px;
+  }
 }
 
 /* Event section */
@@ -366,6 +370,10 @@ $breakpoint-mobile: 480px;
   align-items: center;
   font-weight: bold;
   font-size: 1.3rem;
+
+  @media screen and (max-width: 1300px) {
+    
+  }
 }
 
 /* Event content styling */
@@ -375,6 +383,10 @@ $breakpoint-mobile: 480px;
   color: #1e3a8a;
   font-family: var(--font-primary);
   font-weight: 600;
+
+  @media screen and (max-width: 1300px) {
+    font-size: 1.8rem;
+  }
 }
 
 .eventDescription {
@@ -411,11 +423,12 @@ $breakpoint-mobile: 480px;
   scrollbar-width: none;
 
 
-  @media (min-width: 1300px) {
-    width: 80%;
-    padding: 30px 0;
+  @media (min-width: 768px) {
+    width: 90%;
+    padding: 30px;
+
   }
-  
+
   &::-webkit-scrollbar {
     width: 6px;
   }
@@ -598,8 +611,6 @@ $breakpoint-mobile: 480px;
   }
   
   .eventContent {
-
-    padding: 0;
     @media (min-width: 1300px) {
       width: 80%;
       padding: 2.5rem;
@@ -662,13 +673,11 @@ $breakpoint-mobile: 480px;
   }
   
   .videoBackground {
-    top: $timeline-height-mobile;
     height: calc(100% - #{$timeline-height-mobile});
   }
   
   .sectionsContainer {
     margin-left: 0;
-    margin-top: $timeline-height-mobile;
     width: 100%;
   }
   
@@ -699,11 +708,9 @@ $breakpoint-mobile: 480px;
   
   .heroSection {
     padding: 1rem;
-    margin-top: $timeline-height-small-mobile;
   }
   
   .videoBackground {
-    top: $timeline-height-small-mobile;
     height: calc(100% - #{$timeline-height-small-mobile});
   }
   
@@ -718,10 +725,7 @@ $breakpoint-mobile: 480px;
   .heroText {
     font-size: 1.1rem;
   }
-  
-  .sectionsContainer {
-    margin-top: $timeline-height-small-mobile;
-  }
+
   
   .eventContent {
     padding: 1rem;
@@ -732,7 +736,6 @@ $breakpoint-mobile: 480px;
 .baby01 {
     width: 170px;
     position: absolute;
-    top: 220px;
     will-change: transform;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -740,8 +743,8 @@ $breakpoint-mobile: 480px;
 
 .baby02 {
     width: 100px;
+    top: -120px;
     position: absolute;
-    top: 105px;
     left: 25px;
     will-change: transform;
     transform-style: preserve-3d;
