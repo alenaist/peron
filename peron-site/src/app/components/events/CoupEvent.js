@@ -109,7 +109,26 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             presidencia e iniciando un período de <b>18 años de exilio</b> para el líder justicialista.
           </p>
           
-          {/* Masonry grid layout with multiple images */}
+          <p className={styles.garamondText} style={{ fontFamily: 'EB Garamond, serif', marginTop: '1rem' }}>
+            El 16 de junio de 1955, aviones de la Marina bombardearon la Plaza de Mayo causando más de 300 muertos civiles en un 
+            intento fallido de golpe de Estado, que sería el preludio de la "Revolución Libertadora".
+          </p>
+          
+          <p style={{ 
+            fontStyle: 'italic', 
+            marginTop: '1rem',
+            marginBottom: '1.5rem',
+            borderLeft: '3px solid #1e3a8a',
+            paddingLeft: '1rem',
+            fontFamily: 'EB Garamond, serif'
+          }}>
+            "Ni vencedores ni vencidos"
+            <cite style={{ display: 'block', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+              — Lema inicial del general Eduardo Lonardi
+            </cite>
+          </p>
+          
+          {/* Masonry grid layout with only images */}
           <motion.div 
             className={styles.masonryGrid}
             initial={{ opacity: 0, y: 20 }}
@@ -119,49 +138,10 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            {/* Main text block */}
-            <motion.div
-              style={{
-                gridColumn: '1 / span 2',
-                gridRow: '1',
-                padding: '1.5rem',
-                backgroundColor: 'rgba(30, 58, 138, 0.05)',
-                borderRadius: '8px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ 
-                opacity: isActive ? 1 : 0,
-                scale: isActive ? 1 : 0.95
-              }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <h3 style={{ 
-                fontSize: '1.4rem', 
-                color: '#1e3a8a', 
-                marginBottom: '0.5rem',
-                fontWeight: 600,
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                Bombardeo a Plaza de Mayo
-              </h3>
-              <p className={styles.garamondText} style={{ 
-                fontFamily: 'EB Garamond, serif',
-                margin: 0,
-                fontSize: '1.1rem',
-                lineHeight: 1.6
-              }}>
-                El 16 de junio de 1955, aviones de la Marina bombardearon la Plaza de Mayo causando más de 300 muertos civiles en un 
-                intento fallido de golpe de Estado, que sería el preludio de la "Revolución Libertadora".
-              </p>
-            </motion.div>
-            
             {/* First image - large */}
             <motion.div
               style={{
-                gridColumn: '3',
+                gridColumn: '1',
                 gridRow: '1 / span 2',
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -173,7 +153,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
                 opacity: isActive ? 1 : 0,
                 scale: isActive ? 1 : 0.95
               }}
-              transition={{ duration: 0.5, delay: 0.7 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
             >
               <img 
                 src="/bombardeo.webp" 
@@ -204,8 +184,8 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             {/* Second image */}
             <motion.div
               style={{
-                gridColumn: '1',
-                gridRow: '2',
+                gridColumn: '2',
+                gridRow: '1',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 height: '100%',
@@ -216,7 +196,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
                 opacity: isActive ? 1 : 0,
                 scale: isActive ? 1 : 0.95
               }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
             >
               <img 
                 src="/revolucion-libertadora1.webp" 
@@ -244,49 +224,11 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
               </div>
             </motion.div>
             
-            {/* Quote/fact block */}
-            <motion.div
-              style={{
-                gridColumn: '2',
-                gridRow: '2',
-                padding: '1.5rem',
-                backgroundColor: 'rgba(4, 120, 87, 0.05)',
-                borderRadius: '8px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ 
-                opacity: isActive ? 1 : 0,
-                scale: isActive ? 1 : 0.95
-              }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-            >
-              <p className={styles.garamondText} style={{ 
-                fontFamily: 'EB Garamond, serif',
-                margin: 0,
-                fontStyle: 'italic',
-                fontSize: '1.2rem',
-                lineHeight: 1.5,
-              }}>
-                "Ni vencedores ni vencidos"
-              </p>
-              <p style={{
-                fontSize: '0.9rem',
-                marginTop: '0.5rem',
-                textAlign: 'right',
-                fontFamily: 'EB Garamond, serif'
-              }}>
-                — Lema inicial del general Eduardo Lonardi
-              </p>
-            </motion.div>
-            
             {/* Third image */}
             <motion.div
               style={{
-                gridColumn: '1',
-                gridRow: '3',
+                gridColumn: '3',
+                gridRow: '1',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 height: '100%',
@@ -297,7 +239,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
                 opacity: isActive ? 1 : 0,
                 scale: isActive ? 1 : 0.95
               }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <img 
                 src="/lonardi.webp" 
@@ -329,7 +271,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
             <motion.div
               style={{
                 gridColumn: '2 / span 2',
-                gridRow: '3',
+                gridRow: '2',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 height: '100%',
@@ -340,7 +282,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
                 opacity: isActive ? 1 : 0,
                 scale: isActive ? 1 : 0.95
               }}
-              transition={{ duration: 0.5, delay: 1.1 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
             >
               <img 
                 src="/peron-exilio.webp" 
