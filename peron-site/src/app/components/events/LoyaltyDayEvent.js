@@ -261,7 +261,7 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
           <div style={{ display: 'flex' }}>
 
 
-          <motion.img src="/lealtadPortada.jpg" style={{width: '50%',  maxHeight: '400px', objectFit: 'cover'}}></motion.img>
+          <motion.img src="/lealtadportada.jpg" style={{width: '50%',  maxHeight: '400px', objectFit: 'cover'}}></motion.img>
 
           <motion.div
             style={{
