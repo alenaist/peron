@@ -263,6 +263,16 @@ const ScrollingBiography = () => {
   // Container ref for scroll tracking
   const containerRef = useRef(null);
   
+  // Utility function to reset scroll position
+  const resetScrollPosition = useCallback((delay = 100) => {
+    setTimeout(() => {
+      const eventContent = document.querySelector(`.${styles.eventSection}[style*="display: flex"] .${styles.eventContent}`);
+      if (eventContent) {
+        eventContent.scrollTop = 0;
+      }
+    }, delay);
+  }, []);
+  
   // Calculate scroll progress based on current section
   useEffect(() => {
     const totalSections = biographyEvents.length + 1; // +1 for hero section
@@ -332,6 +342,9 @@ const ScrollingBiography = () => {
           }
           return prev;
         });
+        
+        // Reset scroll position for the next section
+        resetScrollPosition(100);
         
         setTimeout(() => {
           setIsTransitioning(false);
@@ -426,6 +439,9 @@ const ScrollingBiography = () => {
           return prev;
         });
         
+        // Reset scroll position for the next section
+        resetScrollPosition(100);
+        
         setTimeout(() => {
           setIsTransitioning(false);
         }, 800);
@@ -490,6 +506,9 @@ const ScrollingBiography = () => {
             return prev;
           });
           
+          // Reset scroll position for the next section
+          resetScrollPosition(100);
+          
           setTimeout(() => {
             setIsTransitioning(false);
           }, 800);
@@ -508,6 +527,9 @@ const ScrollingBiography = () => {
             return prev;
           });
           
+          // Reset scroll position for the next section
+          resetScrollPosition(100);
+          
           setTimeout(() => {
             setIsTransitioning(false);
           }, 800);
@@ -523,7 +545,6 @@ const ScrollingBiography = () => {
   const navigateToSection = useCallback((index) => {
     if (isTransitioning || index === currentSection) return;
 
-  
     setIsTransitioning(true);
     setCurrentSection(index);
     
@@ -542,22 +563,15 @@ const ScrollingBiography = () => {
     }
     
     // Also reset scroll for the next event content after a short delay
-    setTimeout(() => {
-      const nextEventContent = document.querySelector(`.${styles.eventSection}[style*="display: flex"] .${styles.eventContent}`);
-      if (nextEventContent) {
-        nextEventContent.scrollTop = 0;
-      }
-    }, 100);
+    resetScrollPosition(100);
     
     setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
-  }, [currentSection, isTransitioning, setCurrentSection, setIsTransitioning, setVisitedSections]);
+  }, [currentSection, isTransitioning, setCurrentSection, setIsTransitioning, setVisitedSections, resetScrollPosition]);
   
   // Function to render the appropriate event component based on the current section
   const renderEventComponent = (sectionIndex) => {
-
-
     // If it's the hero section, return null
     if (sectionIndex === 0) return null;
     
