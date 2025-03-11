@@ -50,7 +50,7 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
             width: '100%',
             borderRadius: '12px',
             overflow: 'hidden',
-            marginBottom: '2rem',
+
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)'
           }}
           initial={{ opacity: 0, height: 0 }}
