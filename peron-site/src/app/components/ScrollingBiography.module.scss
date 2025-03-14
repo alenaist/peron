@@ -427,7 +427,9 @@ $breakpoint-mobile: 480px;
 
   scrollbar-width: none;
 
-
+  @media (max-width: 768px) {
+    padding-bottom: 50px !important;
+  }
 
   @media (min-width: 768px) {
     width: 90%;
