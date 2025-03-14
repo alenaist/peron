@@ -32,7 +32,6 @@ $breakpoint-mobile: 480px;
   width: $timeline-width;
   height: 100vh;
   background-color: rgba(245, 247, 250, 0.95);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
   padding: 1rem;
   overflow-y: auto;
@@ -40,7 +39,8 @@ $breakpoint-mobile: 480px;
   font-family: var(--font-primary);
   
   &::-webkit-scrollbar {
-    width: 6px;
+    width: none;
+    display: none;
   }
   
   &::-webkit-scrollbar-track {
@@ -62,6 +62,8 @@ $breakpoint-mobile: 480px;
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 100%;
+  align-items: center;
 }
 
 /* Hero section */
@@ -187,6 +189,15 @@ $breakpoint-mobile: 480px;
   position: relative;
   padding-left: 0.8rem;
   border-left: 3px solid #e5e7eb;
+
+  @media screen and (max-width: 768px) {
+    span {
+      height: 100%;
+    }
+    .timelineButton{
+      border-radius: 0;
+    }
+  }
   
   &::before {
     content: '';
@@ -376,6 +387,10 @@ $breakpoint-mobile: 480px;
 
   @media screen and (max-width: 1300px) {
     font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
   }
 }
 
@@ -623,7 +638,7 @@ $breakpoint-mobile: 480px;
     padding: 0;
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: none;
   }
   
   .timelineList {
@@ -765,6 +780,7 @@ $breakpoint-mobile: 480px;
   
   img {
     transition: transform 0.3s ease;
+    object-fit: cover;
     
     &:hover {
       transform: scale(1.02);
@@ -825,4 +841,120 @@ $breakpoint-mobile: 480px;
       height: 200px !important;
     }
   }
+}
+.military {
+  @media screen and (max-width: 768px) {
+    .mobile_column{
+      display: flex;
+      flex-direction: column;
+  }
+
+  p {margin: 0 !important;}
+  }
+}
+  
+.personal {
+  .mobile_image {
+   
+    @media screen and (min-width: 1300px) {
+      object-position: center -130px;
+    }
+
+
+  }
+}
+
+
+
+.political {
+  .hero_label {
+
+    position: absolute;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    z-index: 99999;
+    width: 80%;
+    text-align: center;
+    
+    @media screen and (min-width: 1300px) {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+  }
+
+  .loyaltyDayContainer {
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .loyaltyDayImage {
+    width: 50%;  
+    max-height:400px; 
+    object-fit: cover;
+  }
+
+  .loyaltyDayContent {
+    background-color: rgba(30, 58, 138, 0.1);
+    padding: 1.5rem 3rem;
+    border-radius: 8px;
+    @media screen and (max-width: 768px) {
+      padding: 1.5rem 1rem;
+    }
+  }
+}
+  
+
+.suffrage {
+  .main_container {
+   .main_image {
+    max-height: 300px;
+
+    @media screen and (min-width: 1300px) {
+      flex-direction: row;
+      max-width: 500px;
+      max-height: none;
+    }
+    
+   } 
+
+   flex-direction: column;
+    @media screen and (min-width: 1300px) {
+      flex-direction: row;
+    }
+  }
+}
+
+.isabelMarriage {
+  .main_container {
+    @media screen and (max-width: 1300px) {
+      flex-direction: column;
+    }
+  }
+  .main_image_container {
+    @media screen and (max-width: 1300px) {
+      max-width: none !important;
+    }
+  }
+
+  .main_image {
+    object-position: none;
+
+    @media screen and (max-width: 1300px) {
+      object-position: center -99px;
+    }
+
+    @media screen and (max-width: 768px) {
+      object-position: unset;
+    }
+
+    @media screen and (min-width: 1600px) {
+      object-position: center -80px;
+    }
+   } 
 }

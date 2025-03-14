@@ -44,7 +44,7 @@ const CoupEvent = ({ isActive, isMobile, contentRef }) => {
 
   return (
     <motion.section 
-      className={`${styles.eventSection} ${styles.right} ${styles.political}`}
+      className={`${styles.eventSection} ${styles.right} ${styles.political} ${styles.coup}`}
       initial={false}
       animate={{ 
         opacity: isActive ? 1 : 0,

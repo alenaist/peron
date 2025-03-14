@@ -122,17 +122,15 @@ const EvaMeetingEvent = ({ isActive, isMobile }) => {
 
 
           }}>
-            <img 
+            <img className={styles.mobile_image}
               src="/peronYeva.jpg" 
               alt="Juan Domingo Perón y Eva Duarte" 
               style={{
                 width: '100%',
                 height: 'auto',
                 display: 'block',
-                top: '-100px',
                 position: 'relative',
-                objectFit: 'cover',
-                objectPosition: 'center -140p',
+                objectFit: 'cover'
               }}
             />
           </div>

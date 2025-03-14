@@ -152,19 +152,8 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
 
 
             {/* Description */}
-            <motion.p 
-              style={{ 
-                fontSize: '1.3rem',
-                lineHeight: 1.6,
-                position: 'absolute',
-                backgroundColor: '#000',
-                color: 'white',
-                padding: '20px',
-                zIndex: 99999,
-                width: '80%',
-                textAlign: 'center',
-              
-              }}
+            <motion.p  
+              className={styles.hero_label}
               variants={itemVariants}
             >
               El 17 de octubre de 1945 se produjo una movilización masiva de trabajadores que exigían la liberación 
@@ -258,18 +247,14 @@ const LoyaltyDayEvent = ({ isActive, isMobile }) => {
           </motion.blockquote>
           
 
-          <div style={{ display: 'flex' }}>
+          <div className={styles.loyaltyDayContainer} style={{ display: 'flex' }}>
 
 
-          <motion.img src="/lealtadportada.jpg" style={{width: '50%',  maxHeight: '400px', objectFit: 'cover'}}></motion.img>
+          <motion.img className={styles.loyaltyDayImage} src="/lealtadportada.jpg"></motion.img>
 
           <motion.div
-            style={{
-              backgroundColor: 'rgba(30, 58, 138, 0.1)',
-              padding: '1.5rem 3rem',
-              borderRadius: '8px',
-            }}
             variants={itemVariants}
+            className={styles.loyaltyDayContent}
           >
             <h3 style={{ 
               fontSize: '1.2rem', 

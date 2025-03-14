@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import SplitType from 'split-type';
 import styles from '../ScrollingBiography.module.scss';
 
+
+
 // Military event with custom structure and animations
 const MilitaryEvent = ({ isActive, isMobile }) => {
   const yearRef = useRef(null);
@@ -94,9 +96,6 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
           Carrera Militar
         </motion.h2>
         
-
-
-        
         {/* Content with animation */}
         <motion.div
           className={styles.eventDescription}
@@ -107,9 +106,8 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
           }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          
 
-          <div style={{ display: 'flex', alignItems: 'center'}}>
+          <div className={styles.mobile_column} style={{ display: 'flex', alignItems: 'center'}}>
 
           <motion.img 
             src="/militar01.jpg" 
@@ -137,10 +135,7 @@ const MilitaryEvent = ({ isActive, isMobile }) => {
               iniciando una carrera que marcaría profundamente su visión política y social. Se graduó en 1913 
               como subteniente de infantería.
             </p>
-            
-           
-       
-           
+          
           </div>
 
           

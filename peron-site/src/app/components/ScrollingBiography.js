@@ -37,11 +37,6 @@ const TimelineIndicator = ({ currentSection, visitedSections, navigateToSection,
           const isVisited = visitedSections.includes(index + 1); // +1 because index 0 is hero
           const isCurrent = index + 1 === currentSection;
           
-          // On mobile, only show current and adjacent events to save space
-          if (isMobile && !isCurrent && index + 1 !== currentSection - 1 && index + 1 !== currentSection + 1 && index !== 0) {
-            return null;
-          }
-          
           // Only show events that have been visited or the first one
           if (!isVisited && index !== 0) return null;
           

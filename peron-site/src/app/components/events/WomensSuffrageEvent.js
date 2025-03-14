@@ -7,7 +7,7 @@ import styles from '../ScrollingBiography.module.scss';
 const WomensSuffrageEvent = ({ isActive, isMobile }) => {
   return (
     <motion.section 
-      className={`${styles.eventSection} ${styles.right} ${styles.political}`}
+      className={`${styles.eventSection} ${styles.right} ${styles.political} ${styles.suffrage}`}
       initial={false}
       animate={{ 
         opacity: isActive ? 1 : 0,
@@ -29,8 +29,6 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
         {/* Year badge with custom animation */}
         <motion.div 
           className={styles.yearBadge}
-          style={{ 
-          }}
           initial={{ opacity: 0, x: 30 }}
           animate={{ 
             opacity: isActive ? 1 : 0, 
@@ -85,14 +83,16 @@ const WomensSuffrageEvent = ({ isActive, isMobile }) => {
             scale: isActive ? 1 : 0.9 
           }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          className={styles.main_container}
         >
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '500px',
             borderRadius: '8px',
             overflow: 'hidden',
-          }}>
+          }}
+          className={styles.main_image}
+          >
             <img 
               src="/evaVotoFemenino.jpg" 
               alt="Eva Perón durante la promulgación del voto femenino" 

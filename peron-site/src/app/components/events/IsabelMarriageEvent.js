@@ -7,7 +7,7 @@ import styles from '../ScrollingBiography.module.scss';
 const IsabelMarriageEvent = ({ isActive, isMobile }) => {
   return (
     <motion.section 
-      className={`${styles.eventSection} ${styles.left} ${styles.personal}`}
+      className={`${styles.eventSection} ${styles.left} ${styles.personal} ${styles.isabelMarriage}`}
       initial={false}
       animate={{ 
         opacity: isActive ? 1 : 0,
@@ -124,6 +124,7 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             scale: isActive ? 1 : 0.9 
           }}
           transition={{ duration: 0.6, delay: 0.5 }}
+          className={styles.main_container}
         >
           <div style={{
             position: 'relative',
@@ -134,7 +135,10 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
             border: '10px solid white',
             maxHeight: '460px'
-          }}>
+          }}
+          
+          className={styles.main_image_container}
+          >
             <img 
               src="isabelPeron01.jpg" 
               alt="Juan Domingo Perón e Isabel Martínez" 
@@ -143,9 +147,9 @@ const IsabelMarriageEvent = ({ isActive, isMobile }) => {
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block',
-                rotate: '2deg',
-                objectPosition: 'center -20px'
+                rotate: '2deg'
               }}
+              className={styles.main_image}
             />
           </div>
 
